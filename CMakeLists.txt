@@ -4,18 +4,19 @@ project(ProtobufBenchmarks)
 
 add_executable(ProtobufBenchmarks
     Src/main.cpp
+    Src/EntityUpdate.pb.cc
 )
 
 target_include_directories(ProtobufBenchmarks
     PRIVATE
-        Inc
+        Src
 )
 
 target_link_libraries(ProtobufBenchmarks
     PRIVATE
         -static-libgcc
         -static-libstdc++
-        protobuf::libprotobuf-lite
+        protobuf::libprotobuf
 )
 
 option(protobuf_BUILD_TESTS "Build tests" OFF)
